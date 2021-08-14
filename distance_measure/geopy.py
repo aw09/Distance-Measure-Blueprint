@@ -12,7 +12,7 @@ geolocator = Nominatim(user_agent="Distance Measure")
 def home():
     return "Please use {}/distance".format(PREFIX)
 
-@geopy_lib.route("/distance/<address>")
+@geopy_lib.route("/<address>")
 def distance_from_mkad(address):
     # target = geolocator.geocode(address)
     # distance_target = distance.distance(CENTER_MKAD, (target.latitude, target.longitude)).km
@@ -23,7 +23,7 @@ def distance_from_mkad(address):
     return distance_two_points(address1, address2)
     
 
-@geopy_lib.route("/distance/<address1>/<address2>")
+@geopy_lib.route("/<address1>/<address2>")
 def distance_two_points(address1, address2):
     target1 = geolocator.geocode(address1)
     target2 = geolocator.geocode(address2)
@@ -33,7 +33,3 @@ def distance_two_points(address1, address2):
             + 'distance: ' + str(distance_target) + ' km'
     current_app.logger.info(log)
     return str(distance_target)
-
-@geopy_lib.route("/distance")
-def empty_address():
-    return "Address parameter cannot be empty!"
