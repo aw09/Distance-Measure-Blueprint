@@ -42,7 +42,7 @@ def test_inside_MKAD(client):
     assert expected == (json.loads(res.get_data(as_text=True)))
 
 def test_two_address(client):
-    # Testing with two addresses
+    # Testing with two address
     
     res = client.get('/yandex/Jember/Surabaya')
     expected = {

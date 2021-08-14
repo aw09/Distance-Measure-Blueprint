@@ -23,7 +23,7 @@ def home():
     </tr>
     <tr>
         <td>/(address1)/(address2)</td>
-        <td>for calculate two addresses</td>
+        <td>for calculate two address</td>
     </tr>
     <tr>
         <td>/miles/(address) </td>
