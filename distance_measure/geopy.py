@@ -1,23 +1,34 @@
+'''
+This file using geopy library
+I found this API before using Yandex
+After I understand the Yandex API I focus on it
+'''
 from flask import Blueprint, current_app
 from geopy.geocoders import Nominatim
 from geopy import distance
 
 PREFIX = '/geopy'
-CENTER_MKAD = (55.75157, 37.61632)
 
 geopy_lib = Blueprint('geopy_lib', __name__, url_prefix=PREFIX)
 geolocator = Nominatim(user_agent="Distance Measure")
 
 @geopy_lib.route("/", methods=["GET"])
 def home():
-    return "Please use {}/distance".format(PREFIX)
+    return '''
+    <table>
+    <tr>
+        <td>/(address)</td>
+        <td>for calculate address from Moscow Ring Road</td>
+    </tr>
+    <tr>
+        <td>/(address1)/(address2)</td>
+        <td>for calculate two addresses</td>
+    </tr>
+    </table>
+    '''
 
 @geopy_lib.route("/<address>")
 def distance_from_mkad(address):
-    # target = geolocator.geocode(address)
-    # distance_target = distance.distance(CENTER_MKAD, (target.latitude, target.longitude)).km
-
-    # return str(distance_target)
     address1 = "Moscow Ring Road"
     address2 = address
     return distance_two_points(address1, address2)

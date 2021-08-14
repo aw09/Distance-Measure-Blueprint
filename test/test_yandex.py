@@ -1,6 +1,8 @@
 import json
 
 def test_outside_MKAD(client):
+    # Testing with Surabaya, outside MKAD
+
     res = client.get('/yandex/Surabaya')
     expected = {
                 "data": {
@@ -19,6 +21,9 @@ def test_outside_MKAD(client):
     assert expected == json.loads(res.get_data(as_text=True))
 
 def test_inside_MKAD(client):
+    # Testing with district in MKAD
+    # It will return 0 
+
     res = client.get('/yandex/Ramenki District')
     expected = {
                 "data": {
@@ -37,6 +42,8 @@ def test_inside_MKAD(client):
     assert expected == (json.loads(res.get_data(as_text=True)))
 
 def test_two_address(client):
+    # Testing with two addresses
+    
     res = client.get('/yandex/Jember/Surabaya')
     expected = {
                 "data": {
@@ -55,6 +62,9 @@ def test_two_address(client):
     assert expected == json.loads(res.get_data(as_text=True))
 
 def test_miles_unit(client):
+    # Testing mile unit
+    # km : mile = 1 : 0,621371
+
     res = client.get('/yandex/miles/Jember/Surabaya')
     expected = {
                 "data": {
@@ -73,6 +83,12 @@ def test_miles_unit(client):
     assert expected == json.loads(res.get_data(as_text=True))
 
 def test_invalid_input(client):
+    # Testing with not found input
+
+    # I don't know what invalid input on address
+    # Because if I just search for integers on google maps 
+    # it still return value
+
     res = client.get('/yandex/12x34')
     expected = {"data":"12x34  not found!","message":"Bad Request","status":400}
     assert expected == (json.loads(res.get_data(as_text=True)))
