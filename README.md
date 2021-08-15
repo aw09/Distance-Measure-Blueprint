@@ -1,7 +1,7 @@
 # Flask Distance Measure Blueprint
 A Flask Blueprint to calculate from two adress
 
-[![Github](http://i.imgur.com/9I6NRUm.png) Github](https://www.linkedin.com/in/agungw9//)<br>
+[![Github](http://i.imgur.com/9I6NRUm.png) Github](https://github.com/aw09)<br>
 [![Linkedin](https://i.stack.imgur.com/gVE0j.png) LinkedIn](https://www.linkedin.com/in/agungw9/) <br>
 [Demo](http://34.101.133.218:5000/)
 
