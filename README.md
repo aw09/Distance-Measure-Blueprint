@@ -13,6 +13,7 @@ A Flask Blueprint to calculate from two adress
   - [Geopy](#geopy)
   - [Yandex](#yandex)
     - [Example Result](#example-result)
+- [Testing & Logging](#testing--logging)
 
 # Installation
 
@@ -133,3 +134,12 @@ This blueprint using geopy library and Yandex API.
 }
 
 ```
+
+# Testing & Logging
+For testing use 
+```
+  pytest
+```
+
+All logs can be found in
+  ***record.log***
