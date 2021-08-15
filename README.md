@@ -37,7 +37,7 @@ Make and activate virtualenv
 ```
 Install the required libraries
 ```
-    pip install -r requiremets.txt
+    pip install -r requirements.txt
 ```
 Run program
 ```
